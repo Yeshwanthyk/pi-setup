@@ -10,6 +10,7 @@ git:github.com/Yeshwanthyk/pi-subagents
 git:github.com/Yeshwanthyk/pi-workflows
 git:github.com/Yeshwanthyk/pi-background-terminals
 git:github.com/Yeshwanthyk/pi-mission-control
+git:github.com/Yeshwanthyk/pi-sandbox
 
 # npm packages follow their latest releases.
 npm:pi-peek

@@ -13,9 +13,10 @@ cd pi-setup
 The installer:
 
 - installs the packages listed in [`packages.txt`](packages.txt) using `pi install`;
+- preserves a local `~/.pi/agent/extensions/pi-sandbox-mcp` development override when present;
 - copies `AGENTS.md`, `agents/`, and `themes/` into `~/.pi/agent`;
 - backs up a changed destination before replacing it;
-- leaves settings, credentials, sessions, workflows, caches, and histories untouched.
+- leaves unrelated settings, credentials, sessions, workflows, caches, and histories untouched.
 
 Set `PI_AGENT_DIR` to test against another destination:
 
@@ -35,8 +36,6 @@ Rerun `./install.sh` after changing authored resources.
 
 ## Intentionally excluded
 
-- `decision-lab`
-- `pi-sandbox-mcp` (currently machine-local)
 - skills symlinked from `~/.gitgud`
 - the filtered `pi-interview-tool` package
 - secrets and runtime/generated state
