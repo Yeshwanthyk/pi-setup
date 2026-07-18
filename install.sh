@@ -39,10 +39,6 @@ while IFS= read -r package || [ -n "$package" ]; do
   case "$package" in
     ''|'#'*) continue ;;
   esac
-  if [ "$package" = "git:github.com/Yeshwanthyk/pi-sandbox" ] && { [ -e "$PI_AGENT_DIR/extensions/pi-sandbox-mcp" ] || [ -L "$PI_AGENT_DIR/extensions/pi-sandbox-mcp" ]; }; then
-    printf 'using local pi-sandbox override %s\n' "$PI_AGENT_DIR/extensions/pi-sandbox-mcp"
-    continue
-  fi
   printf 'installing package %s\n' "$package"
   pi install "$package"
 done < "$SCRIPT_DIR/packages.txt"
