@@ -9,9 +9,12 @@ git:github.com/Yeshwanthyk/telegram-handoff
 git:github.com/Yeshwanthyk/pi-subagents
 git:github.com/Yeshwanthyk/pi-workflows
 git:github.com/Yeshwanthyk/pi-background-terminals
-git:github.com/Yeshwanthyk/pi-mission-control
-git:github.com/Yeshwanthyk/pi-sandbox
+git:github.com/Yeshwanthyk/pi-btw
+git:github.com/Yeshwanthyk/pi-handoff
+git:github.com/Yeshwanthyk/pi-amp-ui
 
 # npm packages follow their latest releases.
 npm:pi-peek
 npm:@injaneity/pi-computer-use
+npm:@plannotator/pi-extension
+npm:@ogulcancelik/pi-codex-compaction
