@@ -23,7 +23,6 @@ cd pi-setup
 - [`pi-subagents`](https://github.com/Yeshwanthyk/pi-subagents)
 - [`pi-workflows`](https://github.com/Yeshwanthyk/pi-workflows)
 - [`pi-background-terminals`](https://github.com/Yeshwanthyk/pi-background-terminals)
-- [`pi-mission-control`](https://github.com/Yeshwanthyk/pi-mission-control)
 - [`pi-btw`](https://github.com/Yeshwanthyk/pi-btw)
 - [`pi-handoff`](https://github.com/Yeshwanthyk/pi-handoff)
 - [`pi-themes`](https://github.com/Yeshwanthyk/pi-themes)

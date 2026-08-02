@@ -8,7 +8,6 @@ git:github.com/Yeshwanthyk/telegram-handoff
 git:github.com/Yeshwanthyk/pi-subagents
 git:github.com/Yeshwanthyk/pi-workflows
 git:github.com/Yeshwanthyk/pi-background-terminals
-git:github.com/Yeshwanthyk/pi-mission-control
 git:github.com/Yeshwanthyk/pi-btw
 git:github.com/Yeshwanthyk/pi-handoff
 git:github.com/Yeshwanthyk/pi-themes
