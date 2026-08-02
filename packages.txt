@@ -12,6 +12,7 @@ git:github.com/Yeshwanthyk/pi-btw
 git:github.com/Yeshwanthyk/pi-handoff
 git:github.com/Yeshwanthyk/pi-themes
 git:github.com/Yeshwanthyk/pi-amp-ui
+git:github.com/Yeshwanthyk/pi-prompt-shelf
 
 # npm packages follow their latest releases.
 npm:pi-peek

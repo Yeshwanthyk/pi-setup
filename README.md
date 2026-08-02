@@ -27,6 +27,7 @@ cd pi-setup
 - [`pi-handoff`](https://github.com/Yeshwanthyk/pi-handoff)
 - [`pi-themes`](https://github.com/Yeshwanthyk/pi-themes)
 - [`pi-amp-ui`](https://github.com/Yeshwanthyk/pi-amp-ui)
+- [`pi-prompt-shelf`](https://github.com/Yeshwanthyk/pi-prompt-shelf)
 
 ### npm
 
