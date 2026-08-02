@@ -33,6 +33,21 @@ install_resource() {
   printf 'installed %s\n' "$relative"
 }
 
+remove_legacy_resource() {
+  relative=$1
+  destination="$PI_AGENT_DIR/$relative"
+
+  if [ ! -e "$destination" ] && [ ! -L "$destination" ]; then
+    return
+  fi
+
+  backup="$BACKUP_DIR/$relative"
+  mkdir -p "$(dirname -- "$backup")"
+  cp -P "$destination" "$backup"
+  rm -f "$destination"
+  printf 'removed legacy %s\n' "$relative"
+}
+
 mkdir -p "$PI_AGENT_DIR"
 
 while IFS= read -r package || [ -n "$package" ]; do
@@ -45,7 +60,20 @@ done < "$SCRIPT_DIR/packages.txt"
 
 install_resource "$SCRIPT_DIR/AGENTS.md" "AGENTS.md"
 
-for directory in agents themes; do
+for theme in \
+  ayu-light.json \
+  flexoki-light.json \
+  github-dark-default.json \
+  kanagawa-lotus.json \
+  rose-pine-dawn.json \
+  vesper.json \
+  yesh-rose-pine-dark.json \
+  yesh-rose-pine-light.json
+do
+  remove_legacy_resource "themes/$theme"
+done
+
+for directory in agents; do
   find "$SCRIPT_DIR/$directory" -type f | while IFS= read -r source; do
     relative=${source#"$SCRIPT_DIR/"}
     install_resource "$source" "$relative"

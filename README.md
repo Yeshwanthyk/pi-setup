@@ -19,13 +19,14 @@ cd pi-setup
 - [`pi-askuser`](https://github.com/Yeshwanthyk/pi-askuser)
 - [`glimpse`](https://github.com/HazAT/glimpse)
 - [`pi-design-deck`](https://github.com/nicobailon/pi-design-deck)
-- [`pi-nightcity`](https://github.com/Yeshwanthyk/pi-nightcity)
 - [`telegram-handoff`](https://github.com/Yeshwanthyk/telegram-handoff)
 - [`pi-subagents`](https://github.com/Yeshwanthyk/pi-subagents)
 - [`pi-workflows`](https://github.com/Yeshwanthyk/pi-workflows)
 - [`pi-background-terminals`](https://github.com/Yeshwanthyk/pi-background-terminals)
+- [`pi-mission-control`](https://github.com/Yeshwanthyk/pi-mission-control)
 - [`pi-btw`](https://github.com/Yeshwanthyk/pi-btw)
 - [`pi-handoff`](https://github.com/Yeshwanthyk/pi-handoff)
+- [`pi-themes`](https://github.com/Yeshwanthyk/pi-themes)
 - [`pi-amp-ui`](https://github.com/Yeshwanthyk/pi-amp-ui)
 
 ### npm
@@ -39,9 +40,10 @@ cd pi-setup
 
 - `AGENTS.md`
 - Agents: `code-simplifier`, `librarian`, `oracle`, `review-deep`, `review-explain`, `review-verify`, `reviewer`, `scout`, `visual-tester`, `worker`
-- Themes: `ayu-light`, `flexoki-light`, `github-dark-default`, `kanagawa-lotus`, `rose-pine-dawn`, `vesper`, `yesh-rose-pine-dark`, `yesh-rose-pine-light`
 
-Existing files are backed up under `~/.pi/agent/backups/` before replacement.
+Themes and the `/theme` command are managed by [`pi-themes`](https://github.com/Yeshwanthyk/pi-themes). The installer backs up and removes legacy top-level theme copies so they cannot shadow package themes during startup.
+
+Existing files are backed up under `~/.pi/agent/backups/` before replacement or removal.
 
 ## Update
 
