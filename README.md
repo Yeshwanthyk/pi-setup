@@ -23,8 +23,6 @@ cd pi-setup
 - [`pi-subagents`](https://github.com/Yeshwanthyk/pi-subagents)
 - [`pi-workflows`](https://github.com/Yeshwanthyk/pi-workflows)
 - [`pi-background-terminals`](https://github.com/Yeshwanthyk/pi-background-terminals)
-- [`pi-btw`](https://github.com/Yeshwanthyk/pi-btw)
-- [`pi-handoff`](https://github.com/Yeshwanthyk/pi-handoff)
 - [`pi-themes`](https://github.com/Yeshwanthyk/pi-themes)
 - [`pi-amp-ui`](https://github.com/Yeshwanthyk/pi-amp-ui)
 - [`pi-prompt-shelf`](https://github.com/Yeshwanthyk/pi-prompt-shelf)
@@ -39,9 +37,12 @@ cd pi-setup
 ## Configuration files
 
 - `AGENTS.md`
-- Agents: `code-simplifier`, `librarian`, `oracle`, `review-deep`, `review-explain`, `review-verify`, `reviewer`, `scout`, `visual-tester`, `worker`
 
 Themes and the `/theme` command are managed by [`pi-themes`](https://github.com/Yeshwanthyk/pi-themes). The installer backs up and removes legacy top-level theme copies so they cannot shadow package themes during startup.
+
+`/btw` is provided by [`pi-subagents`](https://github.com/Yeshwanthyk/pi-subagents). The installer removes the retired standalone `pi-btw` and `pi-handoff` packages.
+
+The installer also backs up and removes legacy agent profiles and stale architecture documents that are no longer part of the active setup.
 
 Existing files are backed up under `~/.pi/agent/backups/` before replacement or removal.
 

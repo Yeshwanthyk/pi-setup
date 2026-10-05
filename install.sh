@@ -48,7 +48,28 @@ remove_legacy_resource() {
   printf 'removed legacy %s\n' "$relative"
 }
 
+remove_legacy_package() {
+  package=$1
+
+  if output=$(pi remove "$package" 2>&1); then
+    printf 'removed legacy package %s\n' "$package"
+    return
+  fi
+
+  case "$output" in
+    *'No matching package found'*) return ;;
+    *) printf '%s\n' "$output" >&2; return 1 ;;
+  esac
+}
+
 mkdir -p "$PI_AGENT_DIR"
+
+for package in \
+  git:github.com/Yeshwanthyk/pi-btw \
+  git:github.com/Yeshwanthyk/pi-handoff
+do
+  remove_legacy_package "$package"
+done
 
 while IFS= read -r package || [ -n "$package" ]; do
   case "$package" in
@@ -59,6 +80,29 @@ while IFS= read -r package || [ -n "$package" ]; do
 done < "$SCRIPT_DIR/packages.txt"
 
 install_resource "$SCRIPT_DIR/AGENTS.md" "AGENTS.md"
+
+for document in \
+  ARCHITECTURE.md \
+  ARCHITECTURE.html
+do
+  remove_legacy_resource "$document"
+done
+
+for agent in \
+  code-simplifier.md \
+  librarian.md \
+  oracle.md \
+  review-deep.md \
+  review-explain.md \
+  review-verify.md \
+  reviewer.md \
+  scout.md \
+  visual-tester.md \
+  worker.md
+do
+  remove_legacy_resource "agents/$agent"
+done
+rmdir "$PI_AGENT_DIR/agents" 2>/dev/null || true
 
 for theme in \
   ayu-light.json \
@@ -71,13 +115,6 @@ for theme in \
   yesh-rose-pine-light.json
 do
   remove_legacy_resource "themes/$theme"
-done
-
-for directory in agents; do
-  find "$SCRIPT_DIR/$directory" -type f | while IFS= read -r source; do
-    relative=${source#"$SCRIPT_DIR/"}
-    install_resource "$source" "$relative"
-  done
 done
 
 printf '\nInstalled packages:\n'
